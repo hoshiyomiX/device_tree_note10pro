@@ -29,7 +29,7 @@ $(call inherit-product, vendor/infinix/note10pro/note10pro-vendor.mk)
 $(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
 
 # Engineer Mode
-$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
+#$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
 
 # Audio
 PRODUCT_COPY_FILES += \
