@@ -19,3 +19,4 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     lineage_note10pro-userdebug
+    lineage_note10pro-eng
