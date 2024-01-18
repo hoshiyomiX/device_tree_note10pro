@@ -26,10 +26,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, vendor/infinix/note10pro/note10pro-vendor.mk)
 
 # IMS
-$(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
+#$(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
 
 # Engineer Mode
-$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
+#$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -110,10 +110,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ImsInit
 
+# IMS
+PRODUCT_BOOT_JARS += \
+    mediatek-common \
+    mediatek-framework \
+    mediatek-ims-base \
+    mediatek-ims-common \
+    mediatek-telecom-common \
+    mediatek-telephony-base \
+    mediatek-telephony-common
+
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay \
     TetheringConfigOverlay
+
+# permission move to system
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml \
+    $(DEVICE_PATH)/configs/permissions/com.mediatek.ims.plugin.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.mediatek.ims.plugin.xml \
+    $(DEVICE_PATH)/configs/permissions/com.mediatek.wfo.legacy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.mediatek.wfo.legacy.xml
 
 # Vendor overlay
 PRODUCT_COPY_FILES += \
