@@ -20,9 +20,11 @@ $(call inherit-product, device/infinix/note10pro/device.mk)
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+USE_PIXEL_CHARGING := true
 IS_PHONE := true
 WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
@@ -35,7 +37,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := note10pro
-PRODUCT_NAME := lineage_note10pro
+PRODUCT_NAME := havoc_note10pro
 PRODUCT_BRAND := Infinix
 PRODUCT_MODEL := Infinix Note 10 Pro
 PRODUCT_MANUFACTURER := Infinix
