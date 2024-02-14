@@ -15,6 +15,7 @@
 #
 
 DEVICE_PATH := device/infinix/note10pro
+ALLOW_MISSING_DEPENDENCIES := true
 
 # Architecture
 TARGET_ARCH := arm64
